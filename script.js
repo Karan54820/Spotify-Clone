@@ -3,7 +3,7 @@ let image = ["https://i.scdn.co/image/ab67616100005174cb6926f44f620555ba444fca",
 let names = ["Pritam","Sachin Jigar","AR Rehman","Arijit Singh","Vishal Shekhar","Atif Aslam"]
 let w = ""
 for(let i=0;i<5;i++){
-    w+=`<div class="box"><div class="circle"><img src="${image[i]}" alt=""></div><p class="roboto-medium flex justify-content-center">${names[i]}</p><p class="roboto-medium flex justify-content-center">Artist</p></div>`
+    w+=`<div class="box"><div class="circle"><img src="${image[i]}" alt=""></div><p class="roboto-medium flex justify-content-center">${names[i]}</p><p class="roboto-medium flex justify-content-center" id="grey">Artist</p></div>`
 }
 x.innerHTML=w;
 
@@ -12,7 +12,7 @@ let album_names = ["Glory","Patandar","Aashiqui 2","Making Memories","Yeh Jawaan
 let y = document.querySelector(".albs");
 let s = ""
 for(let i=0;i<5;i++){
-    s+=`<div class="box"><div class="square"><img src="${albums[i]}" alt=""></div><p class="roboto-medium flex justify-content-center">${album_names[i]}</p><p class="roboto-medium flex justify-content-center">Artist</p></div>`
+    s+=`<div class="box"><div class="square"><img src="${albums[i]}" alt=""></div><p class="roboto-medium flex justify-content-center">${album_names[i]}</p><p class="roboto-medium flex justify-content-center" id="grey">Artist</p></div>`
 }
 y.innerHTML=s;
 
