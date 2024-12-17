@@ -99,3 +99,73 @@ img{
     color: rgb(179, 179, 179);
     font-size: 11px;
 }
+
+.artists{
+    margin-left: 21px;
+    margin-top: 15px;
+}
+
+.sall{
+    font-size: 14px;
+    color: hsla(0deg 0% 70.2%);
+    margin-top: 27px;
+    margin-left: 868px;
+}
+
+.circle {
+    border: 2px solid grey;
+    border-radius: 100px;
+    height: 166px; /* Ensure the circle has a defined height */
+    width: 166px;  /* Ensure the circle has a defined width */
+    margin-left: 16px;
+    margin-top: 32px;
+    position: relative; /* Ensure it can use z-index */
+    z-index: 10; /* Bring the circle to the front if needed */
+}
+
+.circle img {
+    width: 100%;
+    height: 100%; /* Ensure the image fills the circle */
+    border-radius: 50%; /* To make the image circular */
+    object-fit: cover; /* Ensure the image covers the circle without distortion */
+}
+
+.box{
+    /* border: 2px solid grey; */
+    height: 213px;
+    width: 189px;
+    margin-left: 21px;
+    margin-top: 1px;
+}
+
+.box p{
+    margin-top: 11px;
+}
+
+.images{
+    margin-bottom: 81px;
+}
+
+.sall2{
+    font-size: 14px;
+    color: hsla(0deg 0% 70.2%);
+    margin-top: 27px;
+    margin-left: 633px;
+}
+
+.square{
+    /* border: 2px solid grey; */
+    border-radius: 10px;
+    height: 166px; /* Ensure the circle has a defined height */
+    width: 166px;  /* Ensure the circle has a defined width */
+    margin-left: 16px;
+    margin-top: 32px;
+    position: relative; /* Ensure it can use z-index */
+    z-index: 10; /* Bring the circle to the front if needed */
+}
+
+.square img {
+    width: 100%;
+    height: 100%; /* Ensure the image fills the circle */
+    object-fit: cover; /* Ensure the image covers the circle without distortion */
+}
