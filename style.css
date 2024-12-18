@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin; /* Firefox: Thin scrollbar */
+    scrollbar-color: #555 #222; /* Firefox: Thumb and track colors */
 }
 
 body{
@@ -18,11 +20,42 @@ body{
 .left{
     width: 25vw;
     margin: 2px;
+    max-height: 100vh; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.left:hover{
+    overflow-y: auto; /* Ensure vertical scrollbar only */
 }
 
 .right{
     width:75vw;
     margin: 2px;
+    max-height: 100vh; /* Adjust height as needed */
+    overflow: hidden; /* Ensure vertical scrollbar only */
+}
+
+.right:hover{
+    overflow-y: auto;
+}
+
+*::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 8px; /* Optional: Height for horizontal scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+    background: #222; /* Track color (dark background) */
+    border-radius: 4px; /* Rounded corners */
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #555; /* Thumb color (gray slider) */
+    border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #777; /* Thumb color on hover */
 }
 
 img{
@@ -136,6 +169,7 @@ img{
     width: 189px;
     margin-left: 21px;
     margin-top: 1px;
+    text-align: center;
 }
 
 .box p{
@@ -173,4 +207,16 @@ img{
 
 #grey{
     color : hsla(0deg 0% 70.2%);
+}
+
+.sall3{
+    font-size: 14px;
+    color: hsla(0deg 0% 70.2%);
+    margin-top: 27px;
+    margin-right: 20px;
+}
+
+.container{
+    justify-content: space-between;
+
 }
