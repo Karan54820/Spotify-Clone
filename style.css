@@ -220,3 +220,75 @@ img{
     justify-content: space-between;
 
 }
+
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.song-name {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.control-button {
+    background-color: green;
+    border: none;
+    border-radius: 50%;
+    color: black;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.play-button {
+    position: relative;
+}
+
+.play-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid black;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+}
+
+.seek-bar {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.volume-control-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.volume-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    filter: invert(1);
+}
+
+.volume-control {
+    width: 100px;
+}

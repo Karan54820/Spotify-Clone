@@ -44,11 +44,85 @@ q.innerHTML=s3
 
 
 async function getsongs(){
-    let a =  await fetch("http://127.0.0.1:3000/Spotify-Clone/songs/")
-    let response = await a.text 
-    console.log(response)
+    const URL = "http://127.0.0.1:3000/songs";
+    let promise = await fetch(URL);
+    let response = await promise.text();
+    let div = document.createElement('div');
+    div.innerHTML = response;
+    let as = div.getElementsByTagName('a');
+    let songs = [];
 
-    // let data = response.json()
-    // console.log(data)
+    for(let i=0;i<as.length;i++){
+        const element = as[i];
+        if(element.href.endsWith(".mp3")){
+            songs.push(element.href);
+        }
+    }
+
+    console.log(songs);
+    return songs;
 }
+
+function playSongs(songs) {
+    let currentSongIndex = 0;
+    let audio = new Audio(songs[currentSongIndex]);
+    const songNameElement = document.getElementById('songName');
+    const seekBar = document.getElementById('seekBar');
+    const volumeControl = document.getElementById('volumeControl');
+    let isPlaying = false;
+
+    function playCurrentSong() {
+        audio.src = songs[currentSongIndex];
+        songNameElement.textContent = songs[currentSongIndex].split('/').pop();
+        audio.play();
+        isPlaying = true;
+    }
+
+    document.getElementById('prevButton').addEventListener('click', () => {
+        if (currentSongIndex > 0) {
+            currentSongIndex--;
+            playCurrentSong();
+        }
+    });
+
+    document.getElementById('nextButton').addEventListener('click', () => {
+        if (currentSongIndex < songs.length - 1) {
+            currentSongIndex++;
+            playCurrentSong();
+        }
+    });
+
+    audio.addEventListener('ended', () => {
+        if (currentSongIndex < songs.length - 1) {
+            currentSongIndex++;
+            playCurrentSong();
+        }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+        seekBar.value = (audio.currentTime / audio.duration) * 100;
+    });
+
+    seekBar.addEventListener('input', () => {
+        audio.currentTime = (seekBar.value / 100) * audio.duration;
+    });
+
+    volumeControl.addEventListener('input', () => {
+        audio.volume = volumeControl.value / 100;
+    });
+
+    document.getElementById('playButton').addEventListener('click', () => {
+        if (isPlaying) {
+            audio.pause();
+            isPlaying = false;
+        } else {
+            audio.play();
+            isPlaying = true;
+        }
+    });
+
+    playCurrentSong();
+}
+
+getsongs().then(songs => playSongs(songs));
 
